@@ -1,10 +1,5 @@
 /* место для вашего кода */
 
-/*Сделал для реализиции меню и работы с идентификаторами, надеюсь не будет считаться как ошибка*/
-html {
-  scroll-behavior: smooth;
-}
-
 /*Cтили шапки (и частично подвала, где стили повторяются)*/
 
 .header {
@@ -14,7 +9,7 @@ html {
   align-items: center;
   margin: 92px 24px 96px;
   padding: 0 25px;
-  font: "Raleway", "Century Gothic", sans-serif;
+  font: "Raleway", "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
 }
@@ -23,9 +18,9 @@ html {
   display: flex;
   justify-content: space-between;
   width: 387px;
-  line-height: 21px;
   padding-top: 3px;
   padding-left: 3px;
+  line-height: 21px;
 }
 
 .header__links-list-item {
@@ -36,9 +31,21 @@ html {
   list-style-type: none;
 }
 
-.link-active {
+.header__link,
+.footer__link {
+  transition: background 0.2s ease-in-out;
+}
+
+.header__link-active,
+.footer__link-active {
   text-decoration: none;
   pointer-events: none;
+}
+
+.header__link:not(.header__link-active):hover,
+.footer__link:not(.footer__link-active):hover {
+  background: rgba(163, 163, 163, 0.6);
+  transition: background 0.3s ease-in-out;
 }
 
 .header__logo {
@@ -55,8 +62,8 @@ html {
 
 .header__address {
   justify-self: end;
-  padding-right: 5px;
   padding-top: 2px;
+  padding-right: 5px;
 }
 
 /* Стили для главного блока */
@@ -84,7 +91,7 @@ html {
 
 .cover__title {
   justify-content: center;
-  padding: 165px 50px 130px;
+  padding: 165px 50px 125px;
   font-size: 100px;
   line-height: 120px;
   letter-spacing: 30px;
@@ -104,6 +111,8 @@ html {
 }
 
 .aligned-text_center {
+  padding-top: 5px;
+  padding-right: 25px;
   text-align: center;
 }
 
@@ -130,14 +139,19 @@ html {
 }
 
 .bet-button {
-  padding: 11px 31px;
   border: solid 1px white;
+  padding: 11px 35px 11px 31px;
   color: white;
   font-size: 23px;
   text-transform: uppercase;
   background: transparent;
+  transition: background 0.2s ease-in-out;
 }
 
+.bet-button:hover {
+  background: rgba(204, 204, 204, 0.418);
+  transition: background 0.3s ease-in-out;
+}
 
 /* Стили для блока карточек*/
 
@@ -146,7 +160,7 @@ html {
 }
 
 /*Используется повторно в секции About*/
-.section_header_2 {
+.section_title {
   font-weight: 700;
   font-size: 40px;
   line-height: 47px;
@@ -162,7 +176,7 @@ html {
   display: grid;
   grid-template-columns: repeat(3, 334px);
   grid-template-rows: 563px;
-  grid-column-gap: 25px;
+  gap: 10px 25px;
 }
 
 .lots__card-list-item {
@@ -172,7 +186,14 @@ html {
 .card-link {
   display: block;
   height: 100%;
+  outline: 5px solid transparent;
   text-decoration: none;
+  transition: outline 0.2s ease-in-out;
+}
+
+.card-link:hover {
+  outline: 5px solid burlywood;
+  transition: outline 0.3s ease-in-out;
 }
 
 .card_background {
@@ -193,7 +214,7 @@ html {
   background-image: url("/images/card-lot-03.jpg");
 }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -221,6 +242,12 @@ html {
   display: block;
   margin-top: 30px;
   margin-left: 40px;
+  transition: color 0.2s ease-in-out;
+}
+
+.lots__look-more-link:hover {
+  color: rgb(95, 95, 95);
+  transition: color 0.3s ease-in-out;
 }
 
 /* Стили для блока информации */
